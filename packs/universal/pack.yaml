@@ -1,0 +1,5 @@
+name: universal
+description: >
+  Language-agnostic conventions and the decisions every codebase makes.
+  Deliberately small: a rule earns a place here only if it holds in any
+  language and a careful engineer would not argue with it.

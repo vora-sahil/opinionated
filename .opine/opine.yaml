@@ -1,0 +1,20 @@
+# opine configuration. https://github.com/vora-sahil/opinionated
+version: 1
+
+extends:
+  - builtin:universal
+
+decisions:
+  layout/organization: by-feature   # one package per part of the lifecycle: record, check, emit...
+  layout/tests: colocated           # Go's own convention
+  errors/propagation: results       # Go returns errors
+  design/wiring: explicit
+  testing/doubles: fakes
+  api/surface: none                 # Go's package visibility already enforces this
+  workflow/commits: imperative
+  workflow/todos: tracked
+
+overrides:
+  security/no-secrets:
+    exclude: ["packs/universal/conventions/security/no-secrets.md"]
+    reason: The convention's own file spells out the patterns it looks for.

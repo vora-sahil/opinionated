@@ -1,0 +1,37 @@
+# The questions every codebase answers, whether or not anyone wrote the answer
+# down. Each option is a convention in this pack that declares
+# 'decides: <id>' and 'option: <name>'. A repository picks one in opine.yaml;
+# 'none' is always available and means "we deliberately have no rule here".
+#
+# A default is what 'opine init' chooses for a new, empty repository. Decisions
+# whose right answer depends on the language have none.
+
+layout/organization:
+  question: Is code grouped by feature or by technical layer?
+  default: by-feature
+
+layout/tests:
+  question: Where do tests live?
+
+errors/propagation:
+  question: How does a function report failure?
+
+design/wiring:
+  question: How does a component get its dependencies?
+  default: explicit
+
+testing/doubles:
+  question: What stands in for a real dependency in a test?
+  default: fakes
+
+api/surface:
+  question: What may code outside a module import from it?
+  default: entry-point
+
+workflow/commits:
+  question: How is a commit subject written?
+  default: imperative
+
+workflow/todos:
+  question: May a TODO be merged?
+  default: tracked

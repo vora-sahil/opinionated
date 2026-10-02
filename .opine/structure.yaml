@@ -1,0 +1,28 @@
+# The folder layout of this repository. See docs/format.md for the syntax.
+tree:
+  cmd/:
+    closed: true
+    opine/: { role: entry, doc: "The binary. One line; everything lives in internal/cli" }
+  internal/:
+    closed: true
+    dirs: kebab-case
+    cli/:       { role: cli, doc: "Commands: flags, output, exit codes. No logic of its own" }
+    emit/:      { role: emit, doc: "Renders agent files and the CONVENTIONS.md digest" }
+    infer/:     { role: infer, doc: "Reads what an existing repository already does, by counting" }
+    structure/: { role: structure, doc: "structure.yaml: shape, naming and import direction" }
+    check/:     { role: check, doc: "Mechanical checks, suppressions and the baseline" }
+    pack/:      { role: pack, doc: "opine.yaml, packs, and resolving the cascade" }
+    record/:    { role: record, doc: "The convention record: parsing and the format's own rules" }
+    fsx/:       { role: fsx, doc: "Listing repository files and matching globs" }
+    testrepo/:  { doc: "Builds throwaway repositories for tests" }
+  packs/:
+    universal/: { doc: "The pack compiled into the binary. Content only" }
+  docs/:
+layers:
+  - entry
+  - cli
+  - emit | infer
+  - structure
+  - check
+  - pack
+  - fsx | record
